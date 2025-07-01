@@ -1,13 +1,28 @@
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import AppSidebarClient from "@/app/_AppSidebarClient";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Welcome to Next.js!</h1>
-      <h1 style={{ fontFamily: "var(--font-geist-sans)" }}>Hello, Geist Sans</h1>
-      <p className="mt-4 text-lg">
-        This is a simple starter template for Next.js applications.
-      </p>
-
-    </main>
+    <SidebarProvider className="overflow-y-hidden">
+      <AppSidebarClient>
+        <Sidebar collapsible="icon" className="overflow-hidden">
+          <SidebarHeader className="flex-row">
+            <SidebarTrigger />
+            <span className="text-xl text-nowrap">JOB PORTAL</span>
+          </SidebarHeader>
+          <SidebarContent></SidebarContent>
+          <SidebarFooter>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton>
+                  footer
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarFooter>
+        </Sidebar>
+        <main className="flex-1">page main body</main>
+      </AppSidebarClient>
+    </SidebarProvider>
   )
 }
