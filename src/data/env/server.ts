@@ -37,6 +37,11 @@ export const env = createEnv({
      * Must be a non-empty string.
      */
     DB_PASSWORD: z.string().min(1),
+    /**
+     * Clerk secret key for server-side operations.
+     * Must be a non-empty string.
+     */
+    CLERK_SECRET_KEY: z.string().min(1),
   },
 
   /**
