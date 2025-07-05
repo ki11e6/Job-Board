@@ -12,25 +12,25 @@
  * The `ClerkWebhookData` type represents the data payload of a Clerk webhook
  * event, which includes the raw event data and headers.
  */
-import { DeletedObjectJSON, UserJSON } from "@clerk/nextjs/server";
-import { EventSchemas, Inngest } from "inngest";
+import { DeletedObjectJSON, UserJSON } from '@clerk/nextjs/server';
+import { EventSchemas, Inngest } from 'inngest';
 
 type ClerkWebhookData<T> = {
-  data: {
-    data: T;
-    raw: string;
-    headers: Record<string, string>;
-  };
+    data: {
+        data: T;
+        raw: string;
+        headers: Record<string, string>;
+    };
 };
 
 type Events = {
-  "clerk/user.created": ClerkWebhookData<UserJSON>;
-  "clerk/user.updated": ClerkWebhookData<UserJSON>;
-  "clerk/user.deleted": ClerkWebhookData<DeletedObjectJSON>;
+    'clerk/user.created': ClerkWebhookData<UserJSON>;
+    'clerk/user.updated': ClerkWebhookData<UserJSON>;
+    'clerk/user.deleted': ClerkWebhookData<DeletedObjectJSON>;
 };
 
 // Create a client to send and receive events
 export const inngest = new Inngest({
-  id: "Job-Board",
-  schemas: new EventSchemas().fromRecord<Events>(),
+    id: 'Job-Board',
+    schemas: new EventSchemas().fromRecord<Events>(),
 });

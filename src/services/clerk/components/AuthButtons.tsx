@@ -1,28 +1,28 @@
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 import {
-  SignUpButton as ClerkSignUpButton,
-  SignInButton as ClerkSignInButton,
-  SignOutButton as ClerkSignOutButton,
-} from "@clerk/nextjs"
-import { ComponentProps } from "react"
+    SignUpButton as ClerkSignUpButton,
+    SignInButton as ClerkSignInButton,
+    SignOutButton as ClerkSignOutButton,
+} from '@clerk/nextjs';
+import { ComponentProps } from 'react';
 
 export function SignUpButton({
-  children = <Button>Sign Up</Button>,
-  ...props
+    children = <Button>Sign Up</Button>,
+    ...props
 }: ComponentProps<typeof ClerkSignOutButton>) {
-  return <ClerkSignUpButton {...props}>{children}</ClerkSignUpButton>
+    return <ClerkSignUpButton {...props}>{children}</ClerkSignUpButton>;
 }
 
 export function SignInButton({
-  children = <Button>Sign In</Button>,
-  ...props
+    children = <Button>Sign In</Button>,
+    ...props
 }: ComponentProps<typeof ClerkSignOutButton>) {
-  return <ClerkSignInButton {...props}>{children}</ClerkSignInButton>
+    return <ClerkSignInButton {...props}>{children}</ClerkSignInButton>;
 }
 
 export function SignOutButton({
-  children = <Button>Sign Out</Button>,
-  ...props
+    children = <Button>Sign Out</Button>,
+    ...props
 }: ComponentProps<typeof ClerkSignOutButton>) {
-  return <ClerkSignOutButton {...props}>{children}</ClerkSignOutButton>
+    return <ClerkSignOutButton {...props}>{children}</ClerkSignOutButton>;
 }

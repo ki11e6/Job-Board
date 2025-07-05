@@ -1,4 +1,4 @@
-import { timestamp, uuid } from "drizzle-orm/pg-core";
+import { timestamp, uuid } from 'drizzle-orm/pg-core';
 
 /**
  * Creates a column for the created at timestamp.
@@ -6,8 +6,8 @@ import { timestamp, uuid } from "drizzle-orm/pg-core";
  * @returns A column definition for a created at timestamp.
  */
 export const createdAt = timestamp({ withTimezone: true })
-  .notNull()
-  .defaultNow();
+    .notNull()
+    .defaultNow();
 
 /**
  * Creates a column for the updated at timestamp.
@@ -16,8 +16,8 @@ export const createdAt = timestamp({ withTimezone: true })
  * @returns A column definition for an updated at timestamp.
  */
 export const updatedAt = timestamp({ withTimezone: true })
-  .notNull()
-  .defaultNow()
-  .$onUpdate(() => new Date());
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date());
 
 export const id = uuid().primaryKey().defaultRandom();

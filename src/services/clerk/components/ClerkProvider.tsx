@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ClerkProvider as OriginalClerkProvider } from '@clerk/nextjs';
 import { ReactNode } from 'react';
 import { dark } from '@clerk/themes';
@@ -16,12 +16,14 @@ import { useIsDarkMode } from '@/hooks/useIsDarkMode';
  * 3. Otherwise, it uses the default appearance.
  */
 const ClerkProvider = ({ children }: { children: ReactNode }) => {
-  const isDarkMode = useIsDarkMode();
-  return (
-    <OriginalClerkProvider appearance={isDarkMode ? { baseTheme: [dark] } : undefined}>
-      {children}
-    </OriginalClerkProvider>
-  )
-}
+    const isDarkMode = useIsDarkMode();
+    return (
+        <OriginalClerkProvider
+            appearance={isDarkMode ? { baseTheme: [dark] } : undefined}
+        >
+            {children}
+        </OriginalClerkProvider>
+    );
+};
 
-export default ClerkProvider
+export default ClerkProvider;

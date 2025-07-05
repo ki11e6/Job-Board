@@ -37,24 +37,24 @@ Start the development server:
 
 ```bash
 npm run dev
-````
+```
 
 ### Database Commands (PostgreSQL via Drizzle)
 
-* **Generate tables from schema:**
+- **Generate tables from schema:**
 
-  ```bash
-  npm run db:generate
-  ```
+    ```bash
+    npm run db:generate
+    ```
 
-* **Apply migrations to the actual PostgreSQL database:**
+- **Apply migrations to the actual PostgreSQL database:**
 
-  ```bash
-  npm run db:migrate
-  ```
+    ```bash
+    npm run db:migrate
+    ```
 
-* **View and manage the database using Drizzle Studio:**
+- **View and manage the database using Drizzle Studio:**
 
-  ```bash
-  npm run db:studio
-  ```
+    ```bash
+    npm run db:studio
+    ```

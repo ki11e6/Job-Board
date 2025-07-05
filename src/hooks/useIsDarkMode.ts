@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 /**
  * useIsDarkMode
@@ -22,26 +22,26 @@ import { useEffect, useState } from "react";
  * @returns {boolean} Whether the user's device is set to prefer a dark color scheme.
  */
 export function useIsDarkMode() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window === "undefined") return false;
-    // Check if the user prefers dark mode
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        // Check if the user prefers dark mode
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    });
 
-  useEffect(() => {
-    const controller = new AbortController();
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener(
-      "change",
-      (e) => {
-        setIsDarkMode(e.matches);
-      },
-      { signal: controller.signal }
-    );
+    useEffect(() => {
+        const controller = new AbortController();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener(
+            'change',
+            (e) => {
+                setIsDarkMode(e.matches);
+            },
+            { signal: controller.signal }
+        );
 
-    return () => {
-      controller.abort();
-    };
-  }, []);
+        return () => {
+            controller.abort();
+        };
+    }, []);
 
-  return isDarkMode;
+    return isDarkMode;
 }
