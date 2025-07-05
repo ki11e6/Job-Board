@@ -20,7 +20,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
  * match routes. The strings are either exact matches or regex patterns.
  */
 
-const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/"]);
+const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/", "/api(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (!isPublicRoute(req)) {

@@ -42,6 +42,11 @@ export const env = createEnv({
      * Must be a non-empty string.
      */
     CLERK_SECRET_KEY: z.string().min(1),
+    /**
+     * Clerk webhook secret for verifying incoming webhooks.
+     * Must be a non-empty string.
+     */
+    CLERK_WEBHOOK_SECRET: z.string().min(1),
   },
 
   /**
